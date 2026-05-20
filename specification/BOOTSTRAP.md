@@ -6,7 +6,7 @@
 
 **Substrate (installed product)**: `odd_sdlc` — the released ODD-shaped SDLC product carrying the GTL/ABG construction graph, typed stage carriers, cascade attribution patterns, edge-accounting register, and complexity-admitted traversal selection.
 
-**Research source**: `odd_sdlc/.ai-workspace/comments/claude/20260519T230000Z_RESEARCH_pnl_explain_forensic_attribution.md`. Treat that document as the seed knowledge surface for INTENT/PRODUCT/requirements derivation. It is research commentary, not ratified specification; this bootstrap is the conversion point.
+**Research source**: `.ai-workspace/comments/claude/20260519T230000Z_RESEARCH_pnl_explain_forensic_attribution.md` (imported into this project; original provenance: `odd_sdlc/.ai-workspace/comments/claude/20260519T230000Z_RESEARCH_pnl_explain_forensic_attribution.md`). Treat that document as the seed knowledge surface for INTENT/PRODUCT/requirements derivation. It is research commentary, not ratified specification; this bootstrap is the conversion point.
 
 ---
 
@@ -278,7 +278,7 @@ These are placeholder family names; ratified IDs will be assigned during the fir
 
 | Document | Role |
 |---|---|
-| `odd_sdlc/.ai-workspace/comments/claude/20260519T230000Z_RESEARCH_pnl_explain_forensic_attribution.md` | Research seed — landscape, coal data model, cascade architecture, generalization pattern, implementation stack. Treat as commentary, not law. |
+| `.ai-workspace/comments/claude/20260519T230000Z_RESEARCH_pnl_explain_forensic_attribution.md` | Research seed — landscape, coal data model, cascade architecture, generalization pattern, implementation stack. Imported from `odd_sdlc/.ai-workspace/comments/claude/` (same filename); treat as commentary, not law. |
 | `specification_methodology/specification/standards/SPEC_METHOD.md` | Constitutional method governing all change |
 | `specification_methodology/specification/standards/ODD_METHOD.md` | Graph-native product-construction law |
 | `specification_methodology/specification/standards/TICKET_METHOD.md` | Change admission mechanics |
