@@ -589,6 +589,180 @@ opaque. A repeated unexplained shape becomes a candidate vector signature or
 evaluation strategy, then later an admitted strategy or diagnostic rule if it
 survives review.
 
+## Commentary Scope As Cost Dial
+
+The same architecture can operate at different commentary scopes. Commentary
+scope is a policy choice, not an architecture limit.
+
+Narrow scope:
+
+```text
+comment only on breached level-5 desks
+```
+
+Broader scopes:
+
+```text
+comment on breached desks
+comment on near-breach desks
+comment on all desks with material strategy movement
+comment on all strategies with unusual drift
+comment on all residual clusters above a declared threshold
+comment on all strategy / desk / day combinations within a surveillance budget
+```
+
+The trigger does not have to be a threshold breach. Threshold breach is one
+trigger type among many:
+
+```text
+level-5 threshold breach
+near breach
+large market move
+large position change
+large mark-position movement
+strategy drift
+hedge slippage
+unexplained residual
+backdate concentration
+manual adjustment cluster
+new residual cluster
+```
+
+This turns the product from a breach explainer into a general risk-management
+system:
+
+```text
+Trade stream
+  -> strategy signatures
+  -> evidence packs
+  -> evaluation strategies
+  -> explanation candidates
+  -> residuals
+  -> commentary
+```
+
+The same machinery supports:
+
+```text
+post-breach explanation
+pre-breach early warning
+desk strategy monitoring
+mandate compliance
+hedge effectiveness monitoring
+market-move attribution
+operational-risk detection
+model and data-quality surveillance
+portfolio intelligence
+```
+
+The tradeoff is compute cost. Widening the commentary aperture means widening
+one or more of:
+
+```text
+which desks
+which strategies
+which explanation categories
+which residual thresholds
+which near-miss bands
+which market regimes
+which time windows
+```
+
+The design should therefore expose commentary scope as an explicit policy:
+
+```text
+CommentaryPolicy {
+  trigger_set
+  desk_scope
+  strategy_scope
+  explanation_category_scope
+  residual_threshold
+  near_miss_threshold
+  time_window
+  commentary_budget
+}
+```
+
+## Execution Policy And Engine Neutrality
+
+The mathematical pipeline is engine-neutral:
+
+```text
+evidence packs
+  -> vectors
+  -> projection and sieve
+  -> selected evaluation strategies
+  -> residual accounting
+  -> commentary
+```
+
+Spark-style distributed batch is one possible realization, especially for
+large daily attribution, joins, and desk-level reductions. It should not be
+encoded as the architecture. Other execution families may fit parts of the
+workload better:
+
+```text
+batch distributed:
+  large daily attribution, deep replay, heavy joins and aggregation
+
+in-memory columnar:
+  breached-desk evidence packs, fast local explanation, analyst drilldown
+
+streaming or incremental:
+  intraday monitoring, rolling windows, early warning, mark-position changes
+
+OLAP / serving:
+  dashboard slices, portfolio surveillance, historical residual exploration
+```
+
+Choose execution by run policy:
+
+```text
+ExecutionPolicy {
+  scope
+  trigger
+  data_volume
+  latency_target
+  state_size
+  replay_depth
+  commentary_budget
+  engine_class
+}
+```
+
+Example policies:
+
+```text
+EOD controller batch:
+  trigger = end_of_day
+  scope = all desks
+  engine_class = batch_columnar or distributed_batch
+
+Intraday risk monitoring:
+  trigger = event_time_window
+  scope = selected desks or strategies
+  engine_class = streaming_incremental
+
+Breached-desk explanation:
+  trigger = level-5 breach
+  scope = breached desk evidence pack
+  engine_class = in_memory_columnar or bounded batch
+
+Analyst investigation:
+  trigger = human_query
+  scope = selected desk / strategy / time span
+  engine_class = in_memory_columnar or OLAP
+
+Portfolio surveillance:
+  trigger = scheduled rolling window
+  scope = broad desk and strategy set
+  engine_class = distributed_batch, streaming_incremental, or OLAP
+```
+
+The key design requirement is execution polymorphism. The explanatory objects
+must remain stable while the execution engine varies by cost, latency, volume,
+and commentary scope.
+
 ## Design Implication
 
 The next design pass should name these surfaces explicitly:
