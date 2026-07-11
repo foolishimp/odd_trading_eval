@@ -4,6 +4,7 @@
 **Date:** 2026-07-03
 **Working name:** CDM-native GPU Trade Continuum Compute Layer
 **Alternative names:** Trade Continuum Compute Stack, GPU Gain Vector Runtime, CDM Strategy Compute Fabric
+**Authority:** Candidate compute-design source downstream of `INTENT.md` and `PRODUCT.md`; no stack or runtime named here is current product law.
 
 ---
 

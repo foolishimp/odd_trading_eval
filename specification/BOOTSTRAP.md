@@ -1,6 +1,8 @@
 # odd_trading_eval — SPEC_METHOD Bootstrap
 
-**Status**: Seed bootstrap. Provisional until `INTENT.md`, `PRODUCT.md`, `GOALS.md`, and `specification/requirements/` are derived from this document and ratified by an odd_sdlc traversal pass.
+**Status**: Superseded seed. Retained as provenance for the product state that preceded the 2026-07-12 intent reprice.
+
+**Authority**: `INTENT.md` and `PRODUCT.md` define the current constitutional line. Claims in this document are source material until ratified through that line and the live requirement surface.
 
 **Revision**: 2026-05-24. Consolidates the design work captured in `.ai-workspace/comments/claude/` (Eval pipeline ADR, Eval catalog, scaling architecture review, two-part report and commentary regime commitments). Supersedes the earlier seed-only revision.
 
@@ -702,7 +704,10 @@ This document is **closed** and becomes provenance-only when all of the followin
 - The steel-thread loop is demonstrated end-to-end on synthetic data: S1/S2 fail to close → S3 hypothesis ranking → S4 ratification → shadow candidate Eval authored → shadow agreement accumulates → TICKET_METHOD admission → next-run F_D closure (§7 Step 9)
 - `trade_lifecycle/` materialised view rebuild mechanic is implemented and demonstrated (§7 Step 10)
 
-Until all those conditions hold, this BOOTSTRAP.md is the authoritative seed for the project's constitutional surface. After they hold, this file moves to provenance: future readers see it as the seed that produced the live constitutional chain.
+These conditions record the former bootstrap target. They are not current
+closure obligations unless ratified through `INTENT.md`, `PRODUCT.md`, and the
+live requirement surface. This file is provenance for the seed that preceded
+the current constitutional chain.
 
 ## 21. Non-Closure Conditions
 
@@ -752,4 +757,6 @@ These ten questions are not closure blockers for this bootstrap. They are blocke
 
 ---
 
-**End of bootstrap.** Treat this document as constitutional seed only. All authority flows downstream from the ratified `INTENT.md`, `PRODUCT.md`, `GOALS.md`, `specification/requirements/`, and `specification/evals/` derived from it.
+**End of bootstrap provenance.** Current authority begins at `INTENT.md` and
+flows through `PRODUCT.md`, the future `GOALS.md`, and the future live
+requirement surface.

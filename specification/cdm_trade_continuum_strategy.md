@@ -4,6 +4,7 @@
 **Date:** 2026-07-03
 **Working name:** CDM-native Strategy-to-P&L Algebra
 **Alternative names:** Trade Continuum Algebra, Canonical Trade Algebra, Strategy Gain Vector Layer
+**Authority:** Candidate strategy source downstream of `INTENT.md` and `PRODUCT.md`; not current constitutional or ratified design authority.
 
 ---
 
